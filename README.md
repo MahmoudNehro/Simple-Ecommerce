@@ -89,14 +89,4 @@ npm run dev
 ```
 npm run build
 ```
-- Visit [http://localhost:8000](http://localhost:8000) or [http://127.0.0.1:8000](http://127.0.0.1)
-
-
-
-
-
-# Project preview
-
-## Videos Link:
-
-https://drive.google.com/drive/u/2/folders/1Ll3vt8oa_entft-h7F4mkR3t_tFF55Y-
+- Visit [http://localhost:8000](http://localhost:8000) or [http://127.0.0.1:8000](http://127.0.0.1:8000)
