@@ -34,9 +34,12 @@
             notification.title,
             {
                 body: notification.body,
-                requireInteraction: true,
                 vibrate: [200, 100, 200, 100, 200, 100, 200],
-              
+                icon: `{{ asset('assets/images/logo.png') }}`,
+                data: {
+                    dateOfArrival: Date.now(),
+                    primaryKey: 1
+                },
             }
         );
         incrementNotification('notification-count');
