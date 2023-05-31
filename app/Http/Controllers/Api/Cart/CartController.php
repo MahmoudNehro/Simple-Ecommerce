@@ -55,7 +55,7 @@ class CartController extends Controller
     {
         $data = $request->validated();
         $cart = $this->getCartContract->getCartByUserId(auth()->id());
-        $cartItem = $this->getCartContract->getOneCartItem($cart->id, $cartItem->product_id)->firstOrFail();
+        $cartItem = $this->getCartContract->getOneCartItem($cart?->id, $cartItem?->product_id)->firstOrFail();
 
         $cart = $updateCartItemContract->handle($cart, $cartItem, $data['quantity']);
         return new MessageResponse(
@@ -72,7 +72,7 @@ class CartController extends Controller
     public function destroy(CartItem $cartItem, RemoveItemContract $removeItemContract): Responsable
     {
         $cart = $this->getCartContract->getCartByUserId(auth()->id());
-        $cartItem = $this->getCartContract->getOneCartItem($cart->id, $cartItem->product_id)->firstOrFail();
+        $cartItem = $this->getCartContract->getOneCartItem($cart?->id, $cartItem?->product_id)->firstOrFail();
         $cart = $removeItemContract->handle($cart, $cartItem);
         return new MessageResponse(
             message: 'Product removed from cart successfully',

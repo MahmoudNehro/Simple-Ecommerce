@@ -30,7 +30,7 @@ class SubmitOrderRequest extends FormRequest
             foreach ($productsInCart as $productInCart) {
                 $product = $productInCart->product;
                 if (!$product->isAvailable($productInCart->quantity)) {
-                    $validator->errors()->add('product', "Product {$product->name} quantity is not enough, available quantity is {$product->quantity}");
+                    $validator->errors()->add('product', "Product '{$product->name}' quantity is not enough, available quantity is {$product->quantity}");
                 }
             }
         });
