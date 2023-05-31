@@ -12,6 +12,7 @@
                         <th>User</th>
                         <th>Total Price</th>
                         <th>Total Quantity</th>
+                        <th>Date</th>
                         <th>ACTIONs</th>
                     </tr>
                 </thead>
@@ -19,11 +20,14 @@
                 <tbody>
                     @foreach ($orders as $order)
                         <tr>
-                            <td>{{ $order->id }}</td>
+                            <td>{{ $loop->iteration}}</td>
                             <td class="product-name">{{ $order->user?->name }}</td>
                             <td class="product-price">{{ $order->total_price }}</td>
                             <td>
                                 {{ $order->total_quantity }}
+                            </td>
+                            <td>
+                                {{ $order->created_at->format('d/m/Y H:i') }}
                             </td>
                             <td class="product-action">
                                 <a href="{{ route('admin.orders.show', ['order' => $order->id]) }}">

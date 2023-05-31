@@ -11,6 +11,8 @@
                         <th>Id</th>
                         <th>title</th>
                         <th>Body</th>
+                        <th>Received At</th>
+
                         <th>Order</th>
                     </tr>
                 </thead>
@@ -21,6 +23,7 @@
                             <td>{{ $loop->iteration }}</td>
                             <td class="product-name">{{ data_get($notification,'data.title') }}</td>
                             <td class="product-price">{{ data_get($notification,'data.body') }}</td>
+                            <td class="product-price">{{ $notification->created_at?->diffForHumans() }}</td>
                             <td>
                                 <a href="{{ route('admin.orders.show', ['order' => data_get($notification,'data.order_id')]) }}">
                                     <span class="action-show">{{data_get($notification,'data.order_id')}}</span>

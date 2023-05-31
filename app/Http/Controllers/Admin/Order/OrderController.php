@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index(): View
     {
-        $orders = Order::with('user:name,id')->paginate(10);
+        $orders = Order::with('user:name,id')->latest()->paginate(10);
 
         return view('admin.orders.index', compact('orders'));
     }
