@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="author" content="PIXINVENT">
     <title>Ecommerce</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-
     <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon.ico') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -91,7 +89,6 @@
                                                         <input type="email" class="form-control" id="email"
                                                             placeholder="Email" required name="email">
                                                         <div class="form-control-position">
-                                                            <i data-feather="email"></i>
                                                         </div>
                                                         <label for="email">Email</label>
                                                     </fieldset>
@@ -100,7 +97,6 @@
                                                         <input type="password" class="form-control" id="user-password"
                                                             placeholder="Password" required name="password">
                                                         <div class="form-control-position">
-                                                            <i data-feather="lock"></i>
                                                         </div>
                                                         <label for="user-password">Password</label>
                                                     </fieldset>
@@ -134,12 +130,12 @@
 
     <!-- BEGIN: Theme JS-->
     <script src="{{ asset('assets/js/app-menu.js') }}"></script>
-    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="{{ asset('assets/js/components.js') }}"></script>
+    <script src="{{ asset('assets/js/apexcharts.js') }}"></script>
+    
     <!-- END: Theme JS-->
-    <script>
-        feather.replace()
-    </script>
+   
     <!-- BEGIN: Page JS-->
     <!-- END: Page JS-->
 

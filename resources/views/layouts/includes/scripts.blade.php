@@ -30,7 +30,6 @@
 <script type="module">
     Echo.private('App.Models.User.' + "{{ Auth::user()->id }}")
     .notification((notification) => {
-        console.log(notification);
         new Notification(
             notification.title,
             {

@@ -7,6 +7,7 @@ use App\Contracts\Order\SubmitOrderContract;
 use App\Helpers\MessageResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Order\SubmitOrderRequest;
+use App\Http\Resources\Order\OrderResource;
 use Illuminate\Contracts\Support\Responsable;
 
 class OrderController extends Controller
@@ -34,7 +35,7 @@ class OrderController extends Controller
         return new MessageResponse(
             message: 'Order submitted successfully',
             body: [
-                'order' => $order
+                'order' => OrderResource::make($order)
             ],
         );
     }

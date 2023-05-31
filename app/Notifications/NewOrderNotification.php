@@ -45,7 +45,7 @@ class NewOrderNotification extends Notification implements ShouldBroadcast, Shou
         return new BroadcastMessage([
             'id' => $this?->id,
             'title' => 'New Order',
-            'body' => "User {$this->order?->user?->name} has made a new order. number {$this->order?->id}",
+            'body' => "User {$this->order?->user?->name} has made a new order. Order - {$this->order?->id}",
             'order_id' => $this->order?->id,
             'user_id' => $this->order?->user_id,
             'created_at' => $this->order?->created_at?->diffForHumans(),
