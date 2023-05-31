@@ -90,3 +90,9 @@ npm run dev
 npm run build
 ```
 - Visit [http://localhost:8000](http://localhost:8000) or [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+admin credentials:
+```
+email: admin@admin.com
+password: 12345678
+```
