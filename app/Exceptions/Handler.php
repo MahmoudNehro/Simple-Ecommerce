@@ -82,7 +82,7 @@ class Handler extends ExceptionHandler
         $model = explode('\\', $exception->getMessage());
         $model = explode(']', last($model));
         return new MessageResponse(
-            code: Http::UNPROCESSABLE_ENTITY,
+            code: Http::NOT_FOUND,
             message: $model[0] . ' not found.',
             errors: [
                 'model' => [
