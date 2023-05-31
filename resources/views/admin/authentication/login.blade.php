@@ -76,6 +76,12 @@
                                                 </ul>
                                             </div>
                                         @endif
+                                        @if (session()->has('error'))
+                                            <div class="alert alert-danger">
+                                                {{ session()->get('error') }}
+                                            </div>
+                                            
+                                        @endif
                                         <div class="card-content">
                                             <div class="card-body pt-1">
                                                 <form action="{{ route('admin.login.store') }}" method="POST">

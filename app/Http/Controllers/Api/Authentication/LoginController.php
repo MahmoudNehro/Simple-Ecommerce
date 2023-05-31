@@ -22,7 +22,7 @@ class LoginController extends Controller
         $email = data_get($validated, 'email');
         $password = data_get($validated, 'password');
         $user = User::where('email', $email)->first();
-        if (!$user || !Hash::check($password, $user->password)) {
+        if (!$user || !Hash::check($password, $user->password) || $user->is_admin) {
             return new MessageResponse(
                 message: 'Invalid credentials',
                 code: Http::UNPROCESSABLE_ENTITY,

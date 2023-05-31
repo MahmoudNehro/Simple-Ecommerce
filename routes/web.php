@@ -22,7 +22,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/login', [AuthenticationController::class, 'store'])->name('admin.login.store');
 });
 
-Route::middleware(['auth:web'])->group(function () {
+Route::middleware(['auth:web', 'is_admin'])->group(function () {
     Route::get('/', function () {
         return view('welcome');
     })->name('admin.dashboard');
