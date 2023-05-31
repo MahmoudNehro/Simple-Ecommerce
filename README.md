@@ -37,7 +37,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 - Create an empty database for our application
-- In the .env file, add database information to allow Laravel to connect to the database
+- In the .env file, add database information
 ```
 DB_CONNECTION=mysql
 DB_HOST=
@@ -55,6 +55,10 @@ PUSHER_HOST=127.0.0.1
 PUSHER_PORT=6001
 PUSHER_SCHEME=http
 PUSHER_APP_CLUSTER=mt1
+```
+- Make sure the following is in the .env file
+```
+BROADCAST_DRIVER=pusher
 ```
 - For the queue configuration make sure the following is in the .env file
 
@@ -76,6 +80,14 @@ php artisan queue:work
 - Run the web-sockets server
 ```
 php artisan websockets:serve
+```
+- Compile the assets
+```
+npm run dev
+```
+- Or you can build the assets
+```
+npm run build
 ```
 - Visit [http://localhost:8000](http://localhost:8000) or [http://127.0.0.1:8000](http://127.0.0.1)
 
